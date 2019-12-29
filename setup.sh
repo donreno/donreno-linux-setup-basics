@@ -54,6 +54,8 @@ sudo apt-get -y install golang-go
 # Instalar Docker
 echo "Instalando Docker"
 sudo snap install docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # Instalar vscode
 sudo apt-get -y install code
