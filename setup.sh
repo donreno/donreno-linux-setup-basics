@@ -49,7 +49,10 @@ sudo apt-get -y install golang-go
 
 # Instalar Docker
 echo "Instalando Docker"
-sudo apt-get -y install docker
+sudo apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key -y add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
 # Instalar vscode
 sudo apt-get -y install code
