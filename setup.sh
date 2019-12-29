@@ -9,6 +9,10 @@ sudo apt-get -y upgrade
 echo "Instalando GIT"
 sudo apt-get -y install git
 
+# Instalacion snapd
+echo "Instalando snapd"
+sudo apt-get install -y snapd
+
 # Se instala ZSH y Oh My ZSH
 echo "Se instala ZSH"
 sudo apt-get -y install zsh
@@ -49,12 +53,7 @@ sudo apt-get -y install golang-go
 
 # Instalar Docker
 echo "Instalando Docker"
-sudo apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key -y add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo snap install docker
 
 # Instalar vscode
 sudo apt-get -y install code
