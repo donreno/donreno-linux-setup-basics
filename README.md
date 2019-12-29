@@ -1,6 +1,6 @@
 # donreno-linux-setup-basics
 
-Mi script de configuracion para ubuntu (funciona en POP OS)
+Mi script de configuracion para POP OS
 
 # Instrucciones
 Correr el script setup.sh, ingresar la password y esperar.
