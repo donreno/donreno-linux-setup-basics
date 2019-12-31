@@ -17,8 +17,7 @@ sudo apt-get install -y snapd
 echo "Se instala ZSH"
 sudo apt-get -y install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/renito-agnoster.zsh-theme
-wget renito-agnoster.zsh-theme
+wget https://raw.githubusercontent.com/donreno/donreno-linux-setup-basics/master/renito-agnoster.zsh-theme
 mv renito-agnoster.zsh-theme ~/.oh-my-zsh/themes/
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="renito-agnoster"/g' ~/.zshrc
 
