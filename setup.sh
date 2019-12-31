@@ -17,8 +17,10 @@ sudo apt-get install -y snapd
 echo "Se instala ZSH"
 sudo apt-get -y install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
-source ~/.zshrc
+wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/renito-agnoster.zsh-theme
+wget renito-agnoster.zsh-theme
+mv renito-agnoster.zsh-theme ~/.oh-my-zsh/themes/
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="renito-agnoster"/g' ~/.zshrc
 
 # Se instala SDK MAN
 echo "Instalando SDK"
@@ -42,6 +44,7 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 chmod +x install.sh
 ./install.sh
+
 
 # Instalar GO
 echo "Instalando GOLANG"
@@ -67,6 +70,13 @@ sudo apt install -y intellij-idea-community
 
 # Instalar terminator
 sudo apt-get -y install terminator
+
+# Instalar nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+#Finalizando setup
+echo "clear" >> ~/.zshrc
+source ~/.zshrc
 
 # Reminders
 echo
