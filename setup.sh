@@ -30,7 +30,7 @@ echo "SDK instalado"
 echo "Instalando GraalVM"
 echo "Habilitando SDK"
 source ~/.sdkman/bin/sdkman-init.sh
-echo "Inicia instalacion de Graal"
+echo "Inicia instalacion de Graal"source /home/renito/.gvm/scripts/gvm
 sdk i java 19.2.1-grl
 sdk d java 19.2.1-grl
 
@@ -47,31 +47,34 @@ chmod +x install.sh
 
 # Instalar GO
 echo "Instalando GOLANG"
-sudo add-apt-repository -y ppa:longsleep/golang-backports
-sudo add-apt-repository -y ppa:gophers/archive
-sudo apt-get update
-sudo apt-get -y install golang-go
+sudo apt-get install bison -y
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+gvm install go1.14
+gvm use go1.14
+echo "source /home/renito/.gvm/scripts/gvm" >> ~/.zshrc
 
 
 # Instalar Docker
 echo "Instalando Docker"
-sudo snap install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker devconnected
 
 # Instalar vscode
+echo "Instalando vscode"
 sudo apt-get -y install code
 
-# Instalar Intellij idea
-sudo add-apt-repository -y ppa:mmk2410/intellij-idea-community
-sudo apt update
-sudo apt install -y intellij-idea-community
-
 # Instalar terminator
+echo "Instalando Terminator"
 sudo apt-get -y install terminator
 
 # Instalar nvm
+echo "Instalando node"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+# Sets zsh as default shell
+chsh -s $(which zsh)
 
 #Finalizando setup
 echo "clear" >> ~/.zshrc
@@ -83,3 +86,8 @@ echo "*****************"
 echo "Recuerda:" 
 echo "- cambiar la fuente del terminal a Source Code Pro for Powerline Medium"
 echo "- instalar gotools en vscode"
+echo " "
+echo "Reiniciando en 30 segundos..."
+
+sleep 30s
+sudo reboot -h now
